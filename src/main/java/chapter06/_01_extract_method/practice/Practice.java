@@ -28,6 +28,10 @@ public class Practice {
             outstanding = each.getAmount();
         }
 
+        printDetails(outstanding);
+    }
+
+    private void printDetails(double outstanding) {
         // 세부 내역 출력
         System.out.println("고객명 : " + _name);
         System.out.println("외상액 : " + outstanding);
