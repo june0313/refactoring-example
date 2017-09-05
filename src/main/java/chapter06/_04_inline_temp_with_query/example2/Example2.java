@@ -14,7 +14,7 @@ public class Example2 {
     private int _itemPrice;
 
     double getPrice() {
-        int basePrice = _quantity + _itemPrice;
+        final int basePrice = _quantity + _itemPrice;
         double discountFactor;
 
         if (basePrice > 1000) {
