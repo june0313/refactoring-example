@@ -12,7 +12,6 @@ public class Example {
     private AnObject anObject;
 
     boolean method1() {
-        final double basePrice = anObject.basePrice();
-        return (basePrice > 1000);
+        return (anObject.basePrice() > 1000);
     }
 }
