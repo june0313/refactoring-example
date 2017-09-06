@@ -10,7 +10,7 @@ package chapter06._07_remove_assignments_to_parameters.example;
  */
 public class Example {
 
-    int discount(int inputVal, int quantity, int yearToDate) {
+    int discount(final int inputVal, final int quantity, final int yearToDate) {
         int result = inputVal;
 
         if (inputVal > 50) result -= 2;
