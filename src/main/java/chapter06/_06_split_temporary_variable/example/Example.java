@@ -14,21 +14,46 @@ public class Example {
     private double _mass;
     private int _delay;
 
+    public Example(double primaryForce, double secondaryForce, double mass, int delay) {
+        this._primaryForce = primaryForce;
+        this._secondaryForce = secondaryForce;
+        this._mass = mass;
+        this._delay = delay;
+    }
+
     double getDistanceTravelld(int time) {
-        double result;
-        final double primaryAcc = _primaryForce / _mass;
-        int primaryTime = Math.min(time, _delay);
-
-        result = 0.5 * primaryAcc * primaryTime + primaryTime;
-
-        int secondaryTime = time - _delay;
-
-        if (secondaryTime > 0) {
-            double primaryVel = primaryAcc * _delay;
-            final double secondaryAcc = (_primaryForce + _secondaryForce) / _mass;
-            result += primaryVel * secondaryTime + 0.5 * secondaryAcc * secondaryTime * secondaryTime;
+        if (secondaryTime(time) > 0) {
+            return primaryDistance(time) + secondaryDistance(time);
+        } else {
+            return primaryDistance(time);
         }
+    }
 
-        return result;
+    private double secondaryDistance(int time) {
+        return primaryVel() * secondaryTime(time) + 0.5 * secondaryAcc() * secondaryTime(time) * secondaryTime(time);
+    }
+
+    private double primaryDistance(int time) {
+        return 0.5 * primaryAcc() * primaryTime(time) + primaryTime(time);
+    }
+
+    private double primaryVel() {
+        return primaryAcc() * _delay;
+    }
+
+    private int secondaryTime(int time) {
+        return time - _delay;
+    }
+
+    private int primaryTime(int time) {
+        return Math.min(time, _delay);
+    }
+
+    private double secondaryAcc() {
+        return (_primaryForce + _secondaryForce) / _mass;
+    }
+
+    private double primaryAcc() {
+        return _primaryForce / _mass;
     }
 }
