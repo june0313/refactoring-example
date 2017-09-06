@@ -16,7 +16,11 @@ public class Example {
     private boolean initialized;
 
     void exampleMethod() {
-        if (platform.toUpperCase().contains("MAC") && browser.toUpperCase().contains("IE") && wasInitialized() && resize > 0) {
+        final boolean isMacOs = platform.toUpperCase().contains("MAC");
+        final boolean isIEBrowser = browser.toUpperCase().contains("IE");
+        final boolean wasResize = resize > 0;
+
+        if (isMacOs && isIEBrowser && wasInitialized() && wasResize) {
             // do something
             System.out.println("do something");
         }
