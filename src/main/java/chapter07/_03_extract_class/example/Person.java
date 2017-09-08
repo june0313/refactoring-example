@@ -8,7 +8,6 @@ package chapter07._03_extract_class.example;
  */
 public class Person {
     private String _name;
-    private String _officeAreaCode;
     private String _officeNumber;
     private TelephoneNumber _officeTelephone = new TelephoneNumber();
 
@@ -17,15 +16,15 @@ public class Person {
     }
 
     public String getTelephoneNumber() {
-        return "(" + _officeAreaCode + ") " + _officeNumber;
+        return "(" + getOfficeAreaCode() + ") " + _officeNumber;
     }
 
     public String getOfficeAreaCode() {
-        return _officeAreaCode;
+        return _officeTelephone.getAreaCode();
     }
 
     public void setOfficeAreaCode(String officeAreaCode) {
-        this._officeAreaCode = officeAreaCode;
+        _officeTelephone.setAreaCode(officeAreaCode);
     }
 
     public String getOfficeNumber() {
