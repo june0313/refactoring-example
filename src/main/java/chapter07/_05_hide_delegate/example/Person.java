@@ -9,11 +9,11 @@ package chapter07._05_hide_delegate.example;
 public class Person {
     Department department;
 
-    public Department getDepartment() {
-        return department;
-    }
-
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Person getManager() {
+        return this.department.getManager();
     }
 }
