@@ -7,26 +7,4 @@ package chapter07._04_inline_class.example;
  * - 그 클래스의 모든 기능을 다른 클래스로 합쳐 넣고 원래의 클래스는 삭제하자.
  */
 public class TelephoneNumber {
-    private String _areaCode;
-    private String _number;
-
-    public String getAreaCode() {
-        return _areaCode;
-    }
-
-    public void setAreaCode(String _areaCode) {
-        this._areaCode = _areaCode;
-    }
-
-    public String getTelephoneNumber() {
-        return "(" + _areaCode + ") " + _number;
-    }
-
-    public String getNumber() {
-        return _number;
-    }
-
-    public void setNumber(String number) {
-        this._number = number;
-    }
 }

@@ -8,17 +8,30 @@ package chapter07._04_inline_class.example;
  */
 public class Person {
     private String _name;
-    private TelephoneNumber _officeTelephone = new TelephoneNumber();
+    private String _areaCode;
+    private String _number;
 
     public String getName() {
         return _name;
     }
 
     public String getTelephoneNumber() {
-        return _officeTelephone.getTelephoneNumber();
+        return "(" + _areaCode + ") " + _number;
     }
 
-    public TelephoneNumber getOfficeTelephone() {
-        return _officeTelephone;
+    public String getAreaCode() {
+        return _areaCode;
+    }
+
+    public void setAreaCode(String _areaCode) {
+        this._areaCode = _areaCode;
+    }
+
+    public String getNumber() {
+        return _number;
+    }
+
+    public void setNumber(String number) {
+        this._number = number;
     }
 }
