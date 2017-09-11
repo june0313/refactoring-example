@@ -32,4 +32,8 @@ public class ExtendedDate extends Date {
     public ExtendedDate(int year, int month, int date, int hrs, int min, int sec) {
         super(year, month, date, hrs, min, sec);
     }
+
+    public ExtendedDate(Date date) {
+        super(date.getTime());
+    }
 }
