@@ -38,4 +38,16 @@ public class DateWrapper {
     public DateWrapper(Date date) {
         original = date;
     }
+
+    private int getDate() {
+        return original.getDate();
+    }
+
+    private int getMonth() {
+        return original.getMonth();
+    }
+
+    private int getYear() {
+        return original.getYear();
+    }
 }
