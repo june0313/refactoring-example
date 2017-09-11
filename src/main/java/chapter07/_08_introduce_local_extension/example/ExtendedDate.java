@@ -13,4 +13,23 @@ import java.util.Date;
  * 예제1 : 서브 클래스로 정의
  */
 public class ExtendedDate extends Date {
+    public ExtendedDate() {
+        super();
+    }
+
+    public ExtendedDate(String dateString) {
+        super(dateString);
+    }
+
+    public ExtendedDate(int year, int month, int date) {
+        super(year, month, date);
+    }
+
+    public ExtendedDate(int year, int month, int date, int hrs, int min) {
+        super(year, month, date, hrs, min);
+    }
+
+    public ExtendedDate(int year, int month, int date, int hrs, int min, int sec) {
+        super(year, month, date, hrs, min, sec);
+    }
 }
