@@ -14,4 +14,24 @@ import java.util.Date;
  */
 public class DateWrapper {
     private Date original;
+
+    public DateWrapper(long dateLong) {
+        original = new Date(dateLong);
+    }
+
+    public DateWrapper(String dateString) {
+        original = new Date(dateString);
+    }
+
+    public DateWrapper(int year, int month, int date) {
+        original = new Date(year, month, date);
+    }
+
+    public DateWrapper(int year, int month, int date, int hrs, int min) {
+        original = new Date(year, month, date, hrs, min);
+    }
+
+    public DateWrapper(int year, int month, int date, int hrs, int min, int sec) {
+        original = new Date(year, month, date, hrs, min, sec);
+    }
 }
