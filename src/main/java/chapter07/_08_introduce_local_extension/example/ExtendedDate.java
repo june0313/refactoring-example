@@ -36,4 +36,8 @@ public class ExtendedDate extends Date {
     public ExtendedDate(Date date) {
         super(date.getTime());
     }
+
+    public Date nextDay() {
+        return new Date (getYear(), getMonth(), getDate() + 1);
+    }
 }
