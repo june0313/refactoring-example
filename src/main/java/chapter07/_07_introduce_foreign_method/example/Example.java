@@ -16,7 +16,12 @@ public class Example {
     }
 
     public void someMethod() {
-        LocalDate newStart = LocalDate.of(previousEnd.getYear(), previousEnd.getMonthValue(), previousEnd.getDayOfMonth() + 1);
+        LocalDate newStart = nextDay(previousEnd);
         // do something
+    }
+
+    private static LocalDate nextDay(LocalDate previousEnd) {
+        // DateTime 클래스에 있어야 하는 외래 메서드
+        return LocalDate.of(previousEnd.getYear(), previousEnd.getMonthValue(), previousEnd.getDayOfMonth() + 1);
     }
 }
