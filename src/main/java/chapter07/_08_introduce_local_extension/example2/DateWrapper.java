@@ -50,4 +50,8 @@ public class DateWrapper {
     private int getYear() {
         return original.getYear();
     }
+
+    public Date nextDay() {
+        return new Date(getYear(), getMonth(), getDate() + 1);
+    }
 }
