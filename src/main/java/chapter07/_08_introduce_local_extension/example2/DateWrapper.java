@@ -34,4 +34,8 @@ public class DateWrapper {
     public DateWrapper(int year, int month, int date, int hrs, int min, int sec) {
         original = new Date(year, month, date, hrs, min, sec);
     }
+
+    public DateWrapper(Date date) {
+        original = date;
+    }
 }
