@@ -9,7 +9,7 @@ package chapter07._06_remove_middle_man.example;
 public class Person {
     Department department;
 
-    public Person getManager() {
-        return department.getManager();
+    public Department getDepartment() {
+        return department;
     }
 }
