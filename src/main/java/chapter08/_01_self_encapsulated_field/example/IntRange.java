@@ -9,6 +9,22 @@ package chapter08._01_self_encapsulated_field.example;
 public class IntRange {
     private int low, high;
 
+    public int getHigh() {
+        return high;
+    }
+
+    public int getLow() {
+        return low;
+    }
+
+    public void setLow(int low) {
+        this.low = low;
+    }
+
+    public void setHigh(int high) {
+        this.high = high;
+    }
+
     boolean includes (int arg) {
         return arg >= low && arg <= high;
     }
