@@ -34,6 +34,10 @@ public class IntRange {
     }
 
     IntRange(int low, int high) {
+        initialize(low, high);
+    }
+
+    private void initialize(int low, int high) {
         this.low = low;
         this.high = high;
     }
