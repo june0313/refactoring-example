@@ -7,17 +7,17 @@ package chapter08._02_replace_data_value_with_object.example;
  * - 데이터 항목을 객체로 만들자.
  */
 public class Order {
-    private String customer;
+    private Customer customer;
 
-    public Order(String customer) {
-        this.customer = customer;
+    public Order(String customerName) {
+        this.customer = new Customer(customerName);
     }
 
-    public String getCustomer() {
-        return customer;
+    public String getCustomerName() {
+        return customer.getName();
     }
 
     public void setCustomer(String customer) {
-        this.customer = customer;
+        this.customer = new Customer(customer);
     }
 }
