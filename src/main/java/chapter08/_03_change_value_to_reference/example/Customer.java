@@ -9,7 +9,11 @@ package chapter08._03_change_value_to_reference.example;
 public class Customer {
     private final String name;
 
-    public Customer(String name) {
+    public static Customer create(String name) {
+        return new Customer(name);
+    }
+
+    private Customer(String name) {
         this.name = name;
     }
 
