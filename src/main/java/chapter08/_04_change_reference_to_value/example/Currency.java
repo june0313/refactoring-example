@@ -13,7 +13,22 @@ public class Currency {
         return code;
     }
 
-    private Currency(String code) {
+    public Currency(String code) {
         this.code = code;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Currency)) {
+            return false;
+        }
+
+        Currency other = (Currency)obj;
+        return code.equals(other.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return code.hashCode();
     }
 }
