@@ -1,21 +1,22 @@
 package chapter08._05_replace_array_with_object.example;
 
 public class Performance {
-    private String[] data = new String[3];
+    private String name;
+    private Integer wins;
 
     public String getName() {
-        return data[0];
+        return name;
     }
 
     public void setName(String name) {
-        this.data[0] = name;
+        this.name = name;
     }
 
     public Integer getWins() {
-        return Integer.parseInt(data[1]);
+        return wins;
     }
 
-    public void setWins(String wins) {
-        this.data[1] = wins;
+    public void setWins(Integer wins) {
+        this.wins = wins;
     }
 }

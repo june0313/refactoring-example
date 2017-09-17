@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) {
         Performance row = new Performance();
         row.setName("Arsenal");
-        row.setWins("15");
+        row.setWins(15);
 
         String name = row.getName();
         int wins = row.getWins();
