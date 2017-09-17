@@ -8,12 +8,12 @@ package chapter08._05_replace_array_with_object.example;
  */
 public class Client {
     public static void main(String[] args) {
-        String[] row = new String[3];
-        row[0] = "Arsenal";
-        row[1] = "15";
+        Performance row = new Performance();
+        row.setName("Arsenal");
+        row.setWins("15");
 
-        String name = row[0];
-        int wins = Integer.parseInt(row[1]);
+        String name = row.getName();
+        int wins = row.getWins();
 
         System.out.println("name : " + name + ", wins : " + wins);
     }
