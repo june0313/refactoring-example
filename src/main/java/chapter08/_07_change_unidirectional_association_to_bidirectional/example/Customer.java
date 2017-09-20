@@ -11,4 +11,13 @@ import java.util.Set;
  */
 public class Customer {
     private Set<Order> orders = new HashSet<>();
+
+    /** 연결을 변경할 때 Order에 의해서만 사용되어야 한다. **/
+    Set<Order> friendOrders() {
+        return orders;
+    }
+
+    void addOrder(Order order) {
+        order.setCustomer(this);
+    }
 }

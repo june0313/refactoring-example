@@ -14,6 +14,14 @@ public class Order {
     }
 
     public void setCustomer(Customer customer) {
+        if (this.customer != null) {
+            this.customer.friendOrders().remove(this);
+        }
+
         this.customer = customer;
+
+        if (this.customer != null) {
+            this.customer.friendOrders().add(this);
+        }
     }
 }
