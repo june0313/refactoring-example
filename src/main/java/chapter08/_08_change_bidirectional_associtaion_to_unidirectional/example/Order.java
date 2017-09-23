@@ -7,21 +7,13 @@ package chapter08._08_change_bidirectional_associtaion_to_unidirectional.example
  * - 불필요한 방향의 연결을 끊자
  */
 public class Order {
-    Customer customer;
+    private double grossPrice;
 
-    public Customer getCustomer() {
-        return customer;
+    public double getDiscountedPrice(Customer customer) {
+        return getGrossPrice() * (1 - customer.getDiscount());
     }
 
-    public void setCustomer(Customer customer) {
-        if (this.customer != null) {
-            this.customer.friendOrders().remove(this);
-        }
-
-        this.customer = customer;
-
-        if (this.customer != null) {
-            this.customer.friendOrders().add(this);
-        }
+    public double getGrossPrice() {
+        return grossPrice;
     }
 }
