@@ -1,5 +1,7 @@
 package chapter08._11_eccapsulate_collection.example;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -9,13 +11,36 @@ import java.util.Set;
  * - 그 메서드가 읽기전용 뷰를 반환하게 수정하고 추가 메서드와 삭제 메서드를 작성하자.
  */
 public class Person {
-    private Set<Course> courses;
+    private Set<Course> courses = new HashSet<>();
 
     public Set<Course> getCourses() {
-        return courses;
+        return Collections.unmodifiableSet(this.courses);
     }
 
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
+    public void initializeCourses(Set<Course> courses) {
+        assert this.courses.isEmpty();
+        this.courses.addAll(courses);
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
+    }
+
+    int numberOfAdvancedCourses() {
+        int count = 0;
+
+        for (Course course : courses) {
+            if (course.isAdvanced()) count++;
+        }
+
+        return count;
+    }
+
+    int numberOfCourses() {
+        return this.courses.size();
     }
 }
