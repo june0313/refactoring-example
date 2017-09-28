@@ -13,11 +13,11 @@ public class BloodGroup {
         this.code = code;
     }
 
-    public int getCode() {
+    private int getCode() {
         return code;
     }
 
-    public static BloodGroup code(int code) {
+    private static BloodGroup code(int code) {
         return values[code];
     }
 }
