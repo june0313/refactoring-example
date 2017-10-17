@@ -19,10 +19,14 @@ public class Example {
     void someMethod(Date date, int quantity) {
         int charge;
 
-        if (date.before(SUMMER_START) || date.after(SUMMER_END)) {
+        if (notSummer(date)) {
             charge = quantity * winterRate + winterServiceCharge;
         } else {
             charge = quantity * summerRate;
         }
+    }
+
+    private boolean notSummer(Date date) {
+        return date.before(SUMMER_START) || date.after(SUMMER_END);
     }
 }
