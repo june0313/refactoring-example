@@ -20,10 +20,18 @@ public class Example {
         int charge;
 
         if (notSummer(date)) {
-            charge = quantity * winterRate + winterServiceCharge;
+            charge = winterCharge(quantity);
         } else {
-            charge = quantity * summerRate;
+            charge = summerCharge(quantity);
         }
+    }
+
+    private int summerCharge(int quantity) {
+        return quantity * summerRate;
+    }
+
+    private int winterCharge(int quantity) {
+        return quantity * winterRate + winterServiceCharge;
     }
 
     private boolean notSummer(Date date) {
