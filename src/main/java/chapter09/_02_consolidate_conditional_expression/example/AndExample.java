@@ -8,11 +8,7 @@ package chapter09._02_consolidate_conditional_expression.example;
  */
 public class AndExample {
     double exampleMethod() {
-        if (isReasonable()) {
-            return 1;
-        }
-
-        return 0.5;
+        return isReasonable() ? 1 : 0.5;
     }
 
     private boolean isReasonable() {
