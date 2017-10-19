@@ -12,11 +12,15 @@ public class OrExample {
     private boolean isPartTime;
 
     double disabilityAmount() {
-        if (seniority < 2 || monthsDisabled > 12 || isPartTime) {
+        if (isNotEligibleForDisability()) {
             return 0;
         }
 
         // 장애인 공제액 산출
         return 1;
+    }
+
+    private boolean isNotEligibleForDisability() {
+        return seniority < 2 || monthsDisabled > 12 || isPartTime;
     }
 }
