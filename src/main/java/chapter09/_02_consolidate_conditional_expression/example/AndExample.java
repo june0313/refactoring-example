@@ -8,10 +8,8 @@ package chapter09._02_consolidate_conditional_expression.example;
  */
 public class AndExample {
     double exampleMethod() {
-        if (onVacation()) {
-            if (lengthOfService() > 10) {
-                return 1;
-            }
+        if (onVacation() && lengthOfService() > 10) {
+            return 1;
         }
 
         return 0.5;
