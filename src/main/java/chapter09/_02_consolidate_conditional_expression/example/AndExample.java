@@ -8,11 +8,15 @@ package chapter09._02_consolidate_conditional_expression.example;
  */
 public class AndExample {
     double exampleMethod() {
-        if (onVacation() && lengthOfService() > 10) {
+        if (isReasonable()) {
             return 1;
         }
 
         return 0.5;
+    }
+
+    private boolean isReasonable() {
+        return onVacation() && lengthOfService() > 10;
     }
 
     private double lengthOfService() {
