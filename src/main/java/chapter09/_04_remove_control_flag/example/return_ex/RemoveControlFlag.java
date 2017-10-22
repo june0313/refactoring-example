@@ -13,20 +13,17 @@ public class RemoveControlFlag {
     }
 
     private String foundMiscreant(String[] people) {
-        String found = "";
         for (String aPeople : people) {
-            if (found.equals("")) {
-                if (aPeople.equals("Don")) {
-                    sendAlert();
-                    found = "Don";
-                }
-                if (aPeople.equals("John")) {
-                    sendAlert();
-                    found = "John";
-                }
+            if (aPeople.equals("Don")) {
+                sendAlert();
+                return "Don";
+            }
+            if (aPeople.equals("John")) {
+                sendAlert();
+                return "John";
             }
         }
-        return found;
+        return "";
     }
 
     private void someLaterCode(String found) {
