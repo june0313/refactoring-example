@@ -8,8 +8,12 @@ package chapter09._04_remove_control_flag.example.return_ex;
  */
 public class RemoveControlFlag {
     void checkSecurity(String[] people) {
-        String found = "";
+        String found = foundMiscreant(people);
+        someLaterCode(found);
+    }
 
+    private String foundMiscreant(String[] people) {
+        String found = "";
         for (String aPeople : people) {
             if (found.equals("")) {
                 if (aPeople.equals("Don")) {
@@ -22,8 +26,7 @@ public class RemoveControlFlag {
                 }
             }
         }
-
-        someLaterCode(found);
+        return found;
     }
 
     private void someLaterCode(String found) {
