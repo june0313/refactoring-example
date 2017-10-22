@@ -8,20 +8,26 @@ package chapter09._04_remove_control_flag.example.return_ex;
  */
 public class RemoveControlFlag {
     void checkSecurity(String[] people) {
-        boolean found = false;
+        String found = "";
 
         for (String aPeople : people) {
-            if (!found) {
+            if (found.equals("")) {
                 if (aPeople.equals("Don")) {
                     sendAlert();
-                    found = true;
+                    found = "Don";
                 }
                 if (aPeople.equals("John")) {
                     sendAlert();
-                    found = true;
+                    found = "John";
                 }
             }
         }
+
+        someLaterCode(found);
+    }
+
+    private void someLaterCode(String found) {
+        System.out.println(found);
     }
 
     private void sendAlert() {
