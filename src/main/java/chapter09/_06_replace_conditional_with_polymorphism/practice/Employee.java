@@ -7,6 +7,7 @@ package chapter09._06_replace_conditional_with_polymorphism.practice;
  * - 조건문의 각 절을 하위클래스의 재정의 메서드 안으로 옮기고, 원본 메서드는 abstract 타입으로 수정하자.
  */
 public class Employee {
+
     private int monthlySalary;
     private int commission;
     private int bonus;
@@ -14,19 +15,22 @@ public class Employee {
 
     // FIXME : 리팩토링 대상
     int payAmount() {
-        switch(getType()) {
-            case EmployeeType.ENGINEER:
-                return monthlySalary;
-            case EmployeeType.SALESMAN:
-                return monthlySalary + commission;
-            case EmployeeType.MANAGER:
-                return monthlySalary + bonus;
-            default:
-                throw new RuntimeException("없는 사원입니다");
-        }
+        return type.payAmount(this);
     }
 
     private int getType() {
         return type.getTypeCode();
+    }
+
+    public int getMonthlySalary() {
+        return monthlySalary;
+    }
+
+    public int getCommission() {
+        return commission;
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 }
