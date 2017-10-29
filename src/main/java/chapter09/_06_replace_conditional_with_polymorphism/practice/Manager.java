@@ -5,4 +5,9 @@ public class Manager extends EmployeeType {
     int getTypeCode() {
         return EmployeeType.MANAGER;
     }
+
+    @Override
+    int payAmount(Employee emp) {
+        return emp.getMonthlySalary() + emp.getBonus();
+    }
 }

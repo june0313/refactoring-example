@@ -13,7 +13,6 @@ public class Employee {
     private int bonus;
     private EmployeeType type;
 
-    // FIXME : 리팩토링 대상
     int payAmount() {
         return type.payAmount(this);
     }
