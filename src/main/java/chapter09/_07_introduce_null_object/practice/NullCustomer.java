@@ -5,4 +5,9 @@ public class NullCustomer extends Customer {
     boolean isNull() {
         return true;
     }
+
+    @Override
+    String getName() {
+        return "occupant";
+    }
 }

@@ -18,12 +18,7 @@ public class Main {
             plan = customer.getPlan();
         }
 
-        String customerName;
-        if (customer.isNull()) {
-            customerName = "occupant";
-        } else {
-            customerName = customer.getName();
-        }
+        String customerName = customer.getName();
 
         int weeksDelinquent;
         if (customer.isNull()) {
