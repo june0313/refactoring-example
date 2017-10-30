@@ -20,4 +20,8 @@ class Customer {
     boolean isNull() {
         return false;
     }
+
+    static Customer newNull() {
+        return new NullCustomer();
+    }
 }
