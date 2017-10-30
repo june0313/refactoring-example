@@ -16,4 +16,8 @@ class Customer {
     PaymentHistory getHistory() {
         return history;
     }
+
+    boolean isNull() {
+        return false;
+    }
 }
