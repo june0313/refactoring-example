@@ -11,12 +11,7 @@ public class Main {
         Site site = new Site();
         Customer customer = site.getCustomer();
 
-        BillingPlan plan;
-        if (customer.isNull()) {
-            plan = BillingPlan.basic();
-        } else {
-            plan = customer.getPlan();
-        }
+        BillingPlan plan = customer.getPlan();
 
         String customerName = customer.getName();
 

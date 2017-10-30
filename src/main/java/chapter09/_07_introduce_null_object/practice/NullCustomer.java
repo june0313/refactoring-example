@@ -10,4 +10,9 @@ public class NullCustomer extends Customer {
     String getName() {
         return "occupant";
     }
+
+    @Override
+    BillingPlan getPlan() {
+        return BillingPlan.special();
+    }
 }
