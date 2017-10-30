@@ -15,4 +15,9 @@ public class NullCustomer extends Customer {
     BillingPlan getPlan() {
         return BillingPlan.special();
     }
+
+    @Override
+    PaymentHistory getHistory() {
+        return PaymentHistory.newNull();
+    }
 }

@@ -15,11 +15,6 @@ public class Main {
 
         String customerName = customer.getName();
 
-        int weeksDelinquent;
-        if (customer.isNull()) {
-            weeksDelinquent = 0;
-        } else {
-            weeksDelinquent = customer.getHistory().getWeeksDelinquentInLastYear();
-        }
+        int weeksDelinquent = customer.getHistory().getWeeksDelinquentInLastYear();
     }
 }
