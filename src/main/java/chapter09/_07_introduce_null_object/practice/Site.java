@@ -4,6 +4,6 @@ class Site {
     private Customer customer;
 
     Customer getCustomer() {
-        return customer;
+        return customer == null ? Customer.newNull() : customer;
     }
 }
