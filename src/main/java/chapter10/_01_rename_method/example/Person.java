@@ -1,4 +1,4 @@
-package chapter10._01_rename_method;
+package chapter10._01_rename_method.example;
 
 /**
  * Rename Method (메서드명 변경)
