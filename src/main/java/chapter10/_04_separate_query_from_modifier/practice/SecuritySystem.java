@@ -1,4 +1,4 @@
-package chapter10._04_separate_query_from_modifier.example;
+package chapter10._04_separate_query_from_modifier.practice;
 
 /**
  * Separate Query from Modifier (상태 변경 메서드와 값 변환 메서드를 분리)
@@ -8,7 +8,8 @@ package chapter10._04_separate_query_from_modifier.example;
  */
 public class SecuritySystem {
     void checkSecurity(String[] people) {
-        String found = foundMiscreant(people);
+        sendAlert(people);
+        String found = foundPerson(people);
         someLaterCode(found);
     }
 
@@ -16,15 +17,19 @@ public class SecuritySystem {
      * 상태 변경과 값 반환을 모두 수행하는 메서드
      */
     // FIXME : Refactoring
-    private String foundMiscreant(String[] people) {
+    private void sendAlert(String[] people) {
+        if (!foundPerson(people).equals("")) {
+            sendAlert();
+        }
+    }
+
+    private String foundPerson(String[] people) {
         for (String person : people) {
             if (person.equals("Don")) {
-                sendAlert();
                 return "Don";
             }
 
             if (person.equals("John")) {
-                sendAlert();
                 return "John";
             }
         }
@@ -40,4 +45,3 @@ public class SecuritySystem {
         System.out.println("some later code");
     }
 }
-
