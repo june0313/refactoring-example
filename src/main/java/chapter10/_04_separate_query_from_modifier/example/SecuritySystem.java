@@ -20,16 +20,16 @@ public class SecuritySystem {
         for (String person : people) {
             if (person.equals("Don")) {
                 sendAlert();
-                return "Don";
+                return foundPerson(people);
             }
 
             if (person.equals("John")) {
                 sendAlert();
-                return "John";
+                return foundPerson(people);
             }
         }
 
-        return "";
+        return foundPerson(people);
     }
 
     private String foundPerson(String[] people) {
