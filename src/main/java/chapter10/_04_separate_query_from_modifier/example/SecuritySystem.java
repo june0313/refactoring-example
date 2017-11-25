@@ -32,6 +32,20 @@ public class SecuritySystem {
         return "";
     }
 
+    private String foundPerson(String[] people) {
+        for (String person : people) {
+            if (person.equals("Don")) {
+                return "Don";
+            }
+
+            if (person.equals("John")) {
+                return "John";
+            }
+        }
+
+        return "";
+    }
+
     private void sendAlert() {
         System.out.println("send alert!");
     }
