@@ -8,7 +8,7 @@ package chapter10._04_separate_query_from_modifier.example;
  */
 public class SecuritySystem {
     void checkSecurity(String[] people) {
-        foundMiscreant(people);
+        sendAlert(people);
         String found = foundPerson(people);
         someLaterCode(found);
     }
@@ -17,7 +17,7 @@ public class SecuritySystem {
      * 상태 변경과 값 반환을 모두 수행하는 메서드
      */
     // FIXME : Refactoring
-    private void foundMiscreant(String[] people) {
+    private void sendAlert(String[] people) {
         for (String person : people) {
             if (person.equals("Don")) {
                 sendAlert();
