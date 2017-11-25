@@ -18,14 +18,8 @@ public class SecuritySystem {
      */
     // FIXME : Refactoring
     private void sendAlert(String[] people) {
-        for (String person : people) {
-            if (person.equals("Don")) {
-                sendAlert();
-            }
-
-            if (person.equals("John")) {
-                sendAlert();
-            }
+        if (!foundPerson(people).equals("")) {
+            sendAlert();
         }
     }
 
