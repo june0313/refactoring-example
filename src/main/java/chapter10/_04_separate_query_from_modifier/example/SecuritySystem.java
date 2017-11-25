@@ -17,20 +17,16 @@ public class SecuritySystem {
      * 상태 변경과 값 반환을 모두 수행하는 메서드
      */
     // FIXME : Refactoring
-    private String foundMiscreant(String[] people) {
+    private void foundMiscreant(String[] people) {
         for (String person : people) {
             if (person.equals("Don")) {
                 sendAlert();
-                return foundPerson(people);
             }
 
             if (person.equals("John")) {
                 sendAlert();
-                return foundPerson(people);
             }
         }
-
-        return foundPerson(people);
     }
 
     private String foundPerson(String[] people) {
