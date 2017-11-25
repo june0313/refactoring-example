@@ -8,7 +8,8 @@ package chapter10._04_separate_query_from_modifier.example;
  */
 public class SecuritySystem {
     void checkSecurity(String[] people) {
-        String found = foundMiscreant(people);
+        foundMiscreant(people);
+        String found = foundPerson(people);
         someLaterCode(found);
     }
 
