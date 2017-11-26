@@ -10,10 +10,10 @@ public class Employee {
     private double salay;
 
     void tenPercentRaise() {
-        salay += 1.1;
+        salay *= 1.1;
     }
 
     void fivePercentRaise() {
-        salay += 1.05;
+        salay *= 1.05;
     }
 }
