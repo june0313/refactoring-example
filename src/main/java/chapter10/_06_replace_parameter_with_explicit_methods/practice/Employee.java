@@ -12,19 +12,6 @@ public class Employee {
     static final int SALESMAN = 1;
     static final int MANAGER = 2;
 
-    static Employee create(int type) {
-        switch (type) {
-            case ENGINEER:
-                return createEngineer();
-            case SALESMAN:
-                return createSalesman();
-            case MANAGER:
-                return createManager();
-            default:
-                throw new IllegalArgumentException("없는 부호 분류 값");
-        }
-    }
-
     static Employee createEngineer() {
         return new Engineer();
     }
