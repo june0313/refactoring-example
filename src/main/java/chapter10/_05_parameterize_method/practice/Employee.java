@@ -9,11 +9,7 @@ package chapter10._05_parameterize_method.practice;
 public class Employee {
     private double salay;
 
-    void tenPercentRaise() {
-        salay += 1.1;
-    }
-
-    void fivePercentRaise() {
-        salay += 1.05;
+    void raise(double factor) {
+        salay *= (1 + factor);
     }
 }
