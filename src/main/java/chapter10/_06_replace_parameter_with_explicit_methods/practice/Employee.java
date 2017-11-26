@@ -15,11 +15,11 @@ public class Employee {
     static Employee create(int type) {
         switch (type) {
             case ENGINEER:
-                return new Engineer();
+                return createEngineer();
             case SALESMAN:
-                return new Salesman();
+                return createSalesman();
             case MANAGER:
-                return new Manager();
+                return createManager();
             default:
                 throw new IllegalArgumentException("없는 부호 분류 값");
         }
