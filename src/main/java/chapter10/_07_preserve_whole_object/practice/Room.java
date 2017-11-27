@@ -11,7 +11,7 @@ public class Room {
         int low = daysTempRange().getLow();
         int high = daysTempRange().getHigh();
 
-        return plan.withinRange(low, high);
+        return plan.withinRange(low, high, daysTempRange());
     }
 
     private TempRange daysTempRange() {
