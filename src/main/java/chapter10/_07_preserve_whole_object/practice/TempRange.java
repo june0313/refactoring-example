@@ -11,4 +11,8 @@ public class TempRange {
     public int getHigh() {
         return high;
     }
+
+    boolean includes(TempRange arg) {
+        return (arg.getLow() >= this.getLow() && arg.getHigh() <= this.getHigh());
+    }
 }
