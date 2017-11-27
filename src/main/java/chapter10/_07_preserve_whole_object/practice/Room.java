@@ -8,10 +8,7 @@ package chapter10._07_preserve_whole_object.practice;
  */
 public class Room {
     boolean withinPlan(HeatingPlan plan) {
-        int low = daysTempRange().getLow();
-        int high = daysTempRange().getHigh();
-
-        return plan.withinRange(low, high, daysTempRange());
+        return plan.withinRange(daysTempRange());
     }
 
     private TempRange daysTempRange() {
