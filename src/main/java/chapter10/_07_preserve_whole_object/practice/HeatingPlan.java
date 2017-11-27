@@ -4,6 +4,6 @@ public class HeatingPlan {
     private TempRange range;
 
     boolean withinRange(int low, int high, TempRange roomRange) {
-        return (low >= range.getLow() && high <= range.getHigh());
+        return (roomRange.getLow() >= range.getLow() && roomRange.getHigh() <= range.getHigh());
     }
 }
