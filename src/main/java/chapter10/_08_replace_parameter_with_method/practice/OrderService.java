@@ -13,7 +13,6 @@ public class OrderService {
 
     double getPrice() {
         int basePrice = quantity * itemPrice;
-        int discountLevel = getDiscountLevel();
 
         double finalPrice = discountPrice(basePrice);
         return finalPrice;
