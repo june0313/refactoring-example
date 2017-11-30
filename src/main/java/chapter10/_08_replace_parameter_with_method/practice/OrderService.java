@@ -20,7 +20,7 @@ public class OrderService {
     }
 
     private double discountPrice(int basePrice, int discountLevel) {
-        if (discountLevel == 2) {
+        if (getDiscountLevel() == 2) {
             return basePrice * 0.1;
         } else {
             return basePrice * 0.05;
