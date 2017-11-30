@@ -12,19 +12,15 @@ public class OrderService {
     private int itemPrice;
 
     double getPrice() {
-        return discountPrice();
-    }
-
-    private int getBasePrice() {
-        return quantity * itemPrice;
-    }
-
-    private double discountPrice() {
         if (getDiscountLevel() == 2) {
             return getBasePrice() * 0.1;
         } else {
             return getBasePrice() * 0.05;
         }
+    }
+
+    private int getBasePrice() {
+        return quantity * itemPrice;
     }
 
     private int getDiscountLevel() {
