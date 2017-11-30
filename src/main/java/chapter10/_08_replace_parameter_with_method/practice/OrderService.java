@@ -13,12 +13,7 @@ public class OrderService {
 
     double getPrice() {
         int basePrice = quantity * itemPrice;
-        int discountLevel;
-        if (quantity > 100) {
-            discountLevel = 2;
-        } else {
-            discountLevel = 1;
-        }
+        int discountLevel = getDiscountLevel();
 
         double finalPrice = discountPrice(basePrice, discountLevel);
         return finalPrice;
@@ -30,5 +25,15 @@ public class OrderService {
         } else {
             return basePrice * 0.05;
         }
+    }
+
+    private int getDiscountLevel() {
+        int discountLevel;
+        if (quantity > 100) {
+            discountLevel = 2;
+        } else {
+            discountLevel = 1;
+        }
+        return discountLevel;
     }
 }
