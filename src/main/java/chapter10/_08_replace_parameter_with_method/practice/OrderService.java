@@ -28,12 +28,10 @@ public class OrderService {
     }
 
     private int getDiscountLevel() {
-        int discountLevel;
         if (quantity > 100) {
-            discountLevel = 2;
+            return 2;
         } else {
-            discountLevel = 1;
+            return 1;
         }
-        return discountLevel;
     }
 }
