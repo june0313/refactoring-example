@@ -1,6 +1,5 @@
 package chapter10._09_introduce_parameter_object.practice;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,12 +11,12 @@ import java.util.List;
 public class Account {
     private List<Entry> entries;
 
-    double getFlowBetween(Date start, Date end) {
+    double getFlowBetween(DateRange dateRange) {
         double result = 0;
         for (Entry each : entries) {
-            if (each.getDate().equals(start)
-                    || each.getDate().equals(end)
-                    || (each.getDate().after(start) && each.getDate().before(end))) {
+            if (each.getDate().equals(dateRange.getStart())
+                    || each.getDate().equals(dateRange.getEnd())
+                    || (each.getDate().after(dateRange.getStart()) && each.getDate().before(dateRange.getEnd()))) {
                 result += each.getValue();
             }
         }
