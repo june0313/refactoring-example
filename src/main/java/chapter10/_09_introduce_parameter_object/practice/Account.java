@@ -14,9 +14,7 @@ public class Account {
     double getFlowBetween(DateRange dateRange) {
         double result = 0;
         for (Entry each : entries) {
-            if (each.getDate().equals(dateRange.getStart())
-                    || each.getDate().equals(dateRange.getEnd())
-                    || (each.getDate().after(dateRange.getStart()) && each.getDate().before(dateRange.getEnd()))) {
+            if (dateRange.includes(each.getDate())) {
                 result += each.getValue();
             }
         }

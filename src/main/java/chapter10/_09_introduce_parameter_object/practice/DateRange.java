@@ -18,4 +18,8 @@ public class DateRange {
     public Date getEnd() {
         return end;
     }
+
+    public boolean includes(Date arg) {
+        return arg.equals(start) || arg.equals(end) || (arg.after(start) && arg.before(end));
+    }
 }
