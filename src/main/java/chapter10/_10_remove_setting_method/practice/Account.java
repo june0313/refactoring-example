@@ -7,13 +7,10 @@ package chapter10._10_remove_setting_method.practice;
  * - 그 필드를 설정하는 모든 쓰기 메서드를 삭제하자
  */
 public class Account {
-    private String id;
+    private final String id;
 
     public Account(String id) {
-        setId(id);
-    }
-
-    public void setId(String id) {
         this.id = id;
     }
+
 }
