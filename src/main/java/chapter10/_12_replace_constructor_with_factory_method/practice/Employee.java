@@ -19,4 +19,8 @@ public class Employee {
             throw new IllegalArgumentException("객체" + name + "을 인스턴스화 할 수 없음");
         }
     }
+
+    static Engineer createEngineer() {
+        return new Engineer();
+    }
 }
