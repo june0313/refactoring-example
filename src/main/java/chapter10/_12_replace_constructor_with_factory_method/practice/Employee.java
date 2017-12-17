@@ -12,16 +12,11 @@ public class Employee {
     static final int SALESMAN = 1;
     static final int MANAGER = 2;
 
-    static Employee create(int type) {
-        switch (type) {
-            case ENGINEER:
-                return new Engineer();
-            case SALESMAN:
-                return new Salesman();
-            case MANAGER:
-                return new Manager();
-            default:
-                throw new IllegalArgumentException("분류 부호 없음");
+    static Employee create(String name) {
+        try {
+            return (Employee) Class.forName(name).getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new IllegalArgumentException("객체" + name + "을 인스턴스화 할 수 없음");
         }
     }
 }
