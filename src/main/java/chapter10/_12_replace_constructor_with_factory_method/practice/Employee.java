@@ -12,12 +12,16 @@ public class Employee {
     static final int SALESMAN = 1;
     static final int MANAGER = 2;
 
-    // 교체 대상 생성자
-    private Employee(int type) {
-        this.type = type;
-    }
-
     static Employee create(int type) {
-        return new Employee(type);
+        switch (type) {
+            case ENGINEER:
+                return new Engineer();
+            case SALESMAN:
+                return new Salesman();
+            case MANAGER:
+                return new Manager();
+            default:
+                throw new IllegalArgumentException("분류 부호 없음");
+        }
     }
 }
