@@ -6,10 +6,11 @@ public class Client {
 
         int amount = 100;
 
-        if (account.withdraw(amount) == -1) {
-            handleOverdrawn();
-        } else {
+        try {
+            account.withdraw(amount);
             doTheUsualThing();
+        } catch (Exception e) {
+            handleOverdrawn();
         }
     }
 

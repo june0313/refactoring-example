@@ -9,12 +9,11 @@ package chapter10._14_replace_error_code_with_exception.practice.checked;
 public class Account {
     private int balance;
 
-    int withdraw(int amount) {
+    void withdraw(int amount) throws BalanceException {
         if (amount > balance) {
-            return -1;
-        } else {
-            balance -= amount;
-            return 0;
+            throw new BalanceException();
         }
+
+        balance -= amount;
     }
 }
