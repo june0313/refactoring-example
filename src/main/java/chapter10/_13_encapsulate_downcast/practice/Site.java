@@ -13,7 +13,7 @@ public class Site {
 
     List<? extends Object> readings = new ArrayList<Reading>();
 
-    Object getLastReading() {
-        return readings.get(readings.size() - 1);
+    Reading getLastReading() {
+        return (Reading) readings.get(readings.size() - 1);
     }
 }
