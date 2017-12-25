@@ -9,12 +9,15 @@ package chapter10._14_replace_error_code_with_exception.practice.unchecked;
 public class Account {
     private int balance;
 
-    int withdraw(int amount) {
+    void withdraw(int amount) {
         if (amount > balance) {
-            return -1;
-        } else {
-            balance -= amount;
-            return 0;
+            throw new IllegalArgumentException("액수가 너무 큽니다");
         }
+
+        balance -= amount;
+    }
+
+    boolean canWithdraw(int amount) {
+        return amount <= balance;
     }
 }

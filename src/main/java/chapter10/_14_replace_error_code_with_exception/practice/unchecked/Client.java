@@ -6,9 +6,10 @@ public class Client {
 
         int amount = 100;
 
-        if (account.withdraw(amount) == -1) {
+        if (!account.canWithdraw(amount)) {
             handleOverdrawn();
         } else {
+            account.withdraw(amount);
             doTheUsualThing();
         }
     }
