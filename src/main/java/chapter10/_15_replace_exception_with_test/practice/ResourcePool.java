@@ -17,11 +17,10 @@ public class ResourcePool {
 
         if (available.isEmpty()) {
             result = new Resource();
-            allocated.push(result);
-            return result;
+        } else {
+            result = available.pop();
         }
 
-        result = available.pop();
         allocated.push(result);
         return result;
     }
