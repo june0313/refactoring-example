@@ -15,6 +15,13 @@ public class ResourcePool {
 
     Resource getResource() {
         Resource result;
+
+        if (available.isEmpty()) {
+            result = new Resource();
+            allocated.push(result);
+            return result;
+        }
+
         try {
             result = available.pop();
             allocated.push(result);
