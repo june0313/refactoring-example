@@ -1,6 +1,5 @@
 package chapter10._15_replace_exception_with_test.practice;
 
-import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
@@ -22,14 +21,8 @@ public class ResourcePool {
             return result;
         }
 
-        try {
-            result = available.pop();
-            allocated.push(result);
-            return result;
-        } catch (EmptyStackException e) {
-            result = new Resource();
-            allocated.push(result);
-            return result;
-        }
+        result = available.pop();
+        allocated.push(result);
+        return result;
     }
 }
