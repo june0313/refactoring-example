@@ -7,4 +7,5 @@ package chapter11.practice;
  * - 필드를 상위 클래스로 옮기자.
  */
 public class Employee {
+    protected String name;
 }
