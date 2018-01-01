@@ -15,5 +15,10 @@ public abstract class Customer {
         // do something
     }
 
+    void createBill(Date date) {
+        double changeAmount = changeFor(lastBillDate, date);
+        addBill(date, changeAmount);
+    }
+
     abstract double changeFor(Date lastBillDate, Date date);
 }
