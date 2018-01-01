@@ -8,11 +8,12 @@ import java.util.Date;
  * 기능이 같은 메서드가 여러 하위 클래스에 들어 있을 땐
  * - 그 메서드를 상위 클래스로 옮기자.
  */
-public class Customer {
+public abstract class Customer {
     Date lastBillDate;
 
     void addBill(Date date, double amount) {
         // do something
     }
 
+    abstract double changeFor(Date lastBillDate, Date date);
 }

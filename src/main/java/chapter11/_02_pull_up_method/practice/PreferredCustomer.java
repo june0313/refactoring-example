@@ -8,7 +8,7 @@ public class PreferredCustomer extends Customer {
         addBill(date, changeAmount);
     }
 
-    private double changeFor(Date lastBillDate, Date date) {
+    double changeFor(Date lastBillDate, Date date) {
         return 1;
     }
 }
