@@ -9,4 +9,9 @@ package chapter11._03_pull_up_constructor_body.practice;
 public class Employee {
     protected String name;
     protected String id;
+
+    protected Employee(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
 }
