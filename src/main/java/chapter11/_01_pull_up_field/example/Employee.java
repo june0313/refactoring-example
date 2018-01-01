@@ -1,4 +1,4 @@
-package chapter11.practice;
+package chapter11._01_pull_up_field.example;
 
 /**
  * Pull up Field (필드 상향)
@@ -7,5 +7,4 @@ package chapter11.practice;
  * - 필드를 상위 클래스로 옮기자.
  */
 public class Employee {
-    protected String name;
 }
