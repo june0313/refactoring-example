@@ -9,14 +9,10 @@ package chapter11._06_extract_subclass.practice;
 public class JobItem {
     private int unitPrice;
     private int quantity;
-    private boolean isLabor;
-    private Employee employee;
 
-    public JobItem(int unitPrice, int quantity, boolean isLabor, Employee employee) {
+    protected JobItem(int unitPrice, int quantity) {
         this.unitPrice = unitPrice;
         this.quantity = quantity;
-        this.isLabor = isLabor;
-        this.employee = employee;
     }
 
     public int getTotalPrice() {
@@ -24,14 +20,14 @@ public class JobItem {
     }
 
     public int getUnitPrice() {
-        return isLabor ? employee.getRate() : unitPrice;
+        return unitPrice;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    protected boolean isLabor() {
+        return false;
     }
 }
