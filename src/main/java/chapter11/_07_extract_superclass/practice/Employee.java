@@ -1,22 +1,18 @@
 package chapter11._07_extract_superclass.practice;
 
-public class Employee {
-    private String name;
-    private int annualCoast;
+public class Employee extends Party {
+    private int annualCost;
     private String id;
 
-    public Employee(String name, int annualCoast, String id) {
-        this.name = name;
-        this.annualCoast = annualCoast;
+    public Employee(String name, int annualCost, String id) {
+        super(name);
+        this.annualCost = annualCost;
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAnnualCoast() {
-        return annualCoast;
+    @Override
+    public int getAnnualCost() {
+        return annualCost;
     }
 
     public String getId() {

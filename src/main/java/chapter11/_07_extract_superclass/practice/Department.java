@@ -9,25 +9,21 @@ import java.util.Vector;
  * 기능이 비슷한 두 클래스가 있을 땐
  * - 상위클래스를 작성하고 공통된 기능들을 그 상위 클래스로 옮기자.
  */
-public class Department {
-    private String name;
-    private Vector<Employee> staff = new Vector<>();
+public class Department extends Party {
+    private Vector<Party> staff = new Vector<>();
 
     public Department(String name) {
-        this.name = name;
+        super(name);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getTotalAnnualCost() {
-        Enumeration<Employee> e = getStaff();
+    @Override
+    public int getAnnualCost() {
+        Enumeration<Party> e = getStaff();
         int result = 0;
 
         while (e.hasMoreElements()) {
-            Employee each = e.nextElement();
-            result += each.getAnnualCoast();
+            Party each = e.nextElement();
+            result += each.getAnnualCost();
         }
 
         return result;
@@ -37,7 +33,7 @@ public class Department {
         return staff.size();
     }
 
-    private Enumeration<Employee> getStaff() {
+    private Enumeration<Party> getStaff() {
         return staff.elements();
     }
 
