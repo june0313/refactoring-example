@@ -1,5 +1,8 @@
 package chapter11._10_form_template_method.practice;
 
+import chapter11._10_form_template_method.practice.statements.HtmlStatement;
+import chapter11._10_form_template_method.practice.statements.TextStatement;
+
 import java.util.List;
 
 /**
@@ -12,52 +15,27 @@ public class Consumer {
     private String name;
     private List<Rental> rentals;
 
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
     public String getName() {
         return name;
     }
 
-    private int getTotalFrequentRentalPoints() {
+    public int getTotalFrequentRentalPoints() {
         return 0;
     }
 
-    private int getTotalCharge() {
+    public int getTotalCharge() {
         return 0;
     }
 
     public String statement() {
-        StringBuilder result = new StringBuilder(getName());
-        for (Rental rental : rentals) {
-            // 이번에 대여하는 비디오 정보와 대여료를 출력
-            result.append("\t")
-                    .append(rental.getMovie().getTitle())
-                    .append("\t")
-                    .append(String.valueOf(rental.getCharge()))
-                    .append("\n");
-        }
-
-        // 푸터 행 추가
-        result.append("누적 대여료 : ").append(String.valueOf(getTotalCharge()));
-        result.append("적립 포인트 : ").append(String.valueOf(getTotalFrequentRentalPoints()));
-
-        return result.toString();
+        return new TextStatement().value(this);
     }
 
     public String htmlStatement() {
-        StringBuilder result = new StringBuilder(getName());
-        result.append("<h1><em>").append(getName()).append("고객님의 대여 기록</em></h1><p>");
-
-        for (Rental rental : rentals) {
-            // 이번에 대여하는 비디오 정보와 대여료를 출력
-            result.append(rental.getMovie().getTitle())
-                    .append(" : ")
-                    .append(String.valueOf(rental.getCharge()))
-                    .append("<br>\n");
-        }
-
-        // 푸터 행 추가
-        result.append("<p>누적 대여료 : <em>").append(String.valueOf(getTotalCharge())).append("</em></p>");
-        result.append("적립 포인트 : <em>").append(String.valueOf(getTotalFrequentRentalPoints())).append("</em></p>");
-
-        return result.toString();
+        return new HtmlStatement().value(this);
     }
 }
