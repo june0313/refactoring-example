@@ -1,10 +1,10 @@
 package chapter11._08_extract_interface.practice;
 
 public class TimeSheet {
-    double charge(Employee emp, int days) {
-        int base = emp.getRate() * days;
+    double charge(Billable billable, int days) {
+        int base = billable.getRate() * days;
 
-        if (emp.hasSpecialSkill()) {
+        if (billable.hasSpecialSkill()) {
             return base * 1.05;
         } else {
             return base;
