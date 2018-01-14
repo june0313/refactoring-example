@@ -25,7 +25,9 @@ public class Consumer {
     }
 
     public String statement() {
-        StringBuilder result = new StringBuilder(getName());
+        StringBuilder result = new StringBuilder();
+        result.append(getName()).append(" 고객님의 대여 기록\n");
+
         for (Rental rental : rentals) {
             // 이번에 대여하는 비디오 정보와 대여료를 출력
             result.append("\t")
@@ -43,8 +45,8 @@ public class Consumer {
     }
 
     public String htmlStatement() {
-        StringBuilder result = new StringBuilder(getName());
-        result.append("<h1><em>").append(getName()).append("고객님의 대여 기록</em></h1><p>");
+        StringBuilder result = new StringBuilder();
+        result.append(getName()).append("<h1><em>").append(getName()).append("고객님의 대여 기록</em></h1><p>");
 
         for (Rental rental : rentals) {
             // 이번에 대여하는 비디오 정보와 대여료를 출력
